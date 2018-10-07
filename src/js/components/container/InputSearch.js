@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-// import ReactDOM from "react-dom";
+import ReactDOM from "react-dom";
 import Input from "../presentational/Input";
-class FormContainer extends Component {
+
+class inputSearch extends Component {
   constructor() {
     super();
     this.state = {
-      seo_title: ""
+      val_input: ""
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -13,19 +14,21 @@ class FormContainer extends Component {
     this.setState({ [event.target.id]: event.target.value });
   }
   render() {
-    const { seo_title } = this.state;
+    
+    const { val_input } = this.state;
+    console.log('val_input->',val_input);
     return (
-      <form id="article-form">
+      <div>
         <Input
           text="ПОИСК "
-          label="seo_title"
+          label="val_input"
           type="text"
-          id="seo_title"
-          value={seo_title}
+          id="val_input"
+          value={val_input}
           handleChange={this.handleChange}
         />
-      </form>
+      </div>
     );
   }
 }
-export default FormContainer;
+export default inputSearch;

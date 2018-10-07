@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import InputSearch from "../container/InputSearch";
 
 const UserRoute = () => (
 
@@ -19,16 +20,16 @@ const UserRoute = () => (
 
       <hr />
 
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={Search} />
       <Route path="/favorites" component={About} />
       <Route path="/forecast" component={Topics} />
     </div>
   </Router>
 );
-
-const Home = () => (
+let url = 'london2';
+const Search = () => (
   <div>
-    <h2>Home</h2>
+    <InputSearch value='haha' url={'/api/location/search/?query='+url} />    
   </div>
 );
 
